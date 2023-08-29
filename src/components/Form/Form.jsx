@@ -44,7 +44,7 @@ const Form = () => {
         } else {
             tg.MainButton.show()
         }
-    }, [name, phone, city, style])
+    }, [name, phone, city])
 
     const onChangeName = (e) => {
         setName(e.target.value)

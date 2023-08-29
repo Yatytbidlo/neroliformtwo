@@ -7,7 +7,7 @@ const Form = () => {
     const [city, setCity] = useState('')
     const [phone, setPhone] =
         useState('')
-    const [style, setStyle] = useState('')
+    const [style, setStyle] = useState([])
 
     const {tg} = useTelegram()
 
@@ -55,7 +55,7 @@ const Form = () => {
     }
 
     const onChangeStyle = (e) => {
-        setStyle(e.value)
+        setStyle(e.target.value)
     }
 
 
@@ -81,9 +81,9 @@ const Form = () => {
                    onChange={onChangePhone}
             />
             <h4>Выберите парфюм</h4>
-            <label value = {style} onChange={onChangeStyle} className={'select'}><input type="checkbox" value="neroli" />Aventus Creed</label>
-            <label value = {style} onChange={onChangeStyle} className={'select'}><input type="checkbox" value="neroli-grape" />Tygar Bvlgari </label>
-            <label value = {style} onChange={onChangeStyle} className={'select'}><input type="checkbox" value="lalique" />Encre Noire Lalique</label>
+            <label value = {style} className={'select'}><input onChange={onChangeStyle} type="checkbox" value="neroli" />Aventus Creed</label>
+            <label value = {style} className={'select'}><input onChange={onChangeStyle} type="checkbox" value="neroli-grape" />Tygar Bvlgari </label>
+            <label value = {style} className={'select'}><input onChange={onChangeStyle} type="checkbox" value="lalique" />Encre Noire Lalique</label>
         </div>
     );
 };

@@ -7,7 +7,9 @@ const Form = () => {
     const [city, setCity] = useState('')
     const [phone, setPhone] =
         useState('')
-    const [style, setStyle] = useState([])
+    const [neroli, setNeroli] = useState('')
+    const [neroligrape, setNeroliGrape] = useState('')
+    const [lalique, setLalique] = useState('')
 
     const {tg} = useTelegram()
 
@@ -16,10 +18,12 @@ const Form = () => {
             name,
             city,
             phone,
-            style
+            neroli,
+            neroligrape,
+            lalique
         }
         tg.sendData(JSON.stringify(data))
-    }, [name, city, phone, style])
+    }, [name, city, phone, neroli, neroligrape, lalique])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -35,7 +39,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if (!name || !phone || !city || !style) {
+        if (!name || !phone || !city) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show()
@@ -54,8 +58,16 @@ const Form = () => {
         setPhone(e.target.value)
     }
 
-    const onChangeStyle = (e) => {
-        setStyle(e.target.value)
+    const onChangeNeroli = (e) => {
+        setNeroli(e.target.value)
+    }
+
+    const onChangeNeroliGrape = (e) => {
+        setNeroliGrape(e.target.value)
+    }
+
+    const onChangeLalique = (e) => {
+        setLalique(e.target.value)
     }
 
 
@@ -80,12 +92,11 @@ const Form = () => {
                    value={phone}
                    onChange={onChangePhone}
             />
+
             <h4>Выберите парфюм</h4>
-            <div value={style} className={'select'} onChange={onChangeStyle}>
-                <label><input type="checkbox" value="neroli" />Aventus Creed</label>
-                <label><input type="checkbox" value="neroli-grape" />Tygar Bvlgari </label>
-                <label><input type="checkbox" value="lalique" />Encre Noire Lalique</label>
-            </div>
+                <label value={neroli} onChange={onChangeNeroli}><input type="checkbox" />Aventus Creed</label>
+                <label value={neroligrape} onChange={onChangeNeroliGrape}><input type="checkbox" />Tygar Bvlgari </label>
+                <label value={lalique} onChangeNerol={onChangeLalique()}><input type="checkbox" />Encre Noire Lalique</label>
         </div>
     );
 };

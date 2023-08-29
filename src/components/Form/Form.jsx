@@ -94,9 +94,9 @@ const Form = () => {
             />
 
             <h4>Выберите парфюм</h4>
-                <label value={neroli} onChange={onChangeNeroli}><input type="checkbox" />Aventus Creed</label>
-                <label value={neroligrape} onChange={onChangeNeroliGrape}><input type="checkbox" />Tygar Bvlgari </label>
-                <label value={lalique} onChangeNerol={onChangeLalique()}><input type="checkbox" />Encre Noire Lalique</label>
+                <label value={neroli} onChange={onChangeNeroli}><input type="checkbox" value="neroli"/>Aventus Creed</label>
+                <label value={neroligrape} onChange={onChangeNeroliGrape}><input type="checkbox" value="neroligrape"/>Tygar Bvlgari </label>
+                <label value={lalique} onChange={onChangeLalique}><input type="checkbox" value="lalique"/>Encre Noire Lalique</label>
         </div>
     );
 };

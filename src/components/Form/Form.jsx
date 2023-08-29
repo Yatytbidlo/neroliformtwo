@@ -81,10 +81,10 @@ const Form = () => {
                    onChange={onChangePhone}
             />
             <h4>Выберите парфюм</h4>
-            <div value={'style'} className={'select'}>
-                <label><input onChange={onChangeStyle} type="checkbox" value="neroli" />Aventus Creed</label>
-                <label><input onChange={onChangeStyle} type="checkbox" value="neroli-grape" />Tygar Bvlgari </label>
-                <label><input onChange={onChangeStyle} type="checkbox" value="lalique" />Encre Noire Lalique</label>
+            <div value={'style'} className={'select'} onChange={onChangeStyle}>
+                <label><input type="checkbox" value="neroli" />Aventus Creed</label>
+                <label><input type="checkbox" value="neroli-grape" />Tygar Bvlgari </label>
+                <label><input type="checkbox" value="lalique" />Encre Noire Lalique</label>
             </div>
         </div>
     );

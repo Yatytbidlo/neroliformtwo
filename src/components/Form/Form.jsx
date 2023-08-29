@@ -81,7 +81,7 @@ const Form = () => {
                    onChange={onChangePhone}
             />
             <h4>Выберите парфюм</h4>
-            <div value={'style'} className={'select'} onChange={onChangeStyle}>
+            <div value={style} className={'select'} onChange={onChangeStyle}>
                 <label><input type="checkbox" value="neroli" />Aventus Creed</label>
                 <label><input type="checkbox" value="neroli-grape" />Tygar Bvlgari </label>
                 <label><input type="checkbox" value="lalique" />Encre Noire Lalique</label>

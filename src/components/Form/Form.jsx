@@ -55,7 +55,7 @@ const Form = () => {
     }
 
     const onChangeStyle = (e) => {
-        setStyle(e.target.value)
+        setStyle(e.value)
     }
 
 

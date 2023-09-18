@@ -10,6 +10,8 @@ const Form = () => {
     const [neroli, setNeroli] = useState('')
     const [neroligrape, setNeroliGrape] = useState('')
     const [lalique, setLalique] = useState('')
+    const [jimmychoo, setJimmyChoo] = useState('')
+    const [jimmychoointense, setJimmyChooIntense] = useState('')
 
     const {tg} = useTelegram()
 
@@ -20,10 +22,12 @@ const Form = () => {
             phone,
             neroli,
             neroligrape,
-            lalique
+            lalique,
+            jimmychoo,
+            jimmychoointense
         }
         tg.sendData(JSON.stringify(data))
-    }, [name, city, phone, neroli, neroligrape, lalique])
+    }, [name, city, phone, neroli, neroligrape, lalique, jimmychoo, jimmychoointense])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -70,6 +74,14 @@ const Form = () => {
         setLalique(e.target.value)
     }
 
+    const onChangeJimmyChoo = (e) => {
+        setJimmyChoo(e.target.value)
+    }
+
+    const onChangeJimmyChooIntense = (e) => {
+        setJimmyChooIntense(e.target.value)
+    }
+
 
     return (
         <div className={'form'}>
@@ -94,9 +106,11 @@ const Form = () => {
             />
 
             <h4>Выберите парфюм</h4>
-                <label value={neroli} onChange={onChangeNeroli}><input type="checkbox" value="neroli"/>Aventus Creed</label>
-                <label value={neroligrape} onChange={onChangeNeroliGrape}><input type="checkbox" value="neroligrape"/>Tygar Bvlgari </label>
-                <label value={lalique} onChange={onChangeLalique}><input type="checkbox" value="lalique"/>Encre Noire Lalique</label>
+            <label value={neroli} onChange={onChangeNeroli}><input type="checkbox" value="neroli"/>Aventus Creed</label>
+            <label value={neroligrape} onChange={onChangeNeroliGrape}><input type="checkbox" value="neroligrape"/>Tygar Bvlgari </label>
+            <label value={lalique} onChange={onChangeLalique}><input type="checkbox" value="lalique"/>Encre Noire Lalique</label>
+            <label value={jimmychoo} onChange={onChangeJimmyChoo}><input type="checkbox" value="lalique"/>Jimmy Choo Man</label>
+            <label value={jimmychoointense} onChange={onChangeJimmyChooIntense}><input type="checkbox" value="lalique"/>Jimmy Choo Man Intense</label>
         </div>
     );
 };

@@ -107,10 +107,10 @@ const Form = () => {
 
             <h4>Выберите парфюм</h4>
             <label value={neroli} onChange={onChangeNeroli}><input type="checkbox" value="neroli"/>Aventus Creed</label>
-            <label value={neroligrape} onChange={onChangeNeroliGrape}><input type="checkbox" value="neroligrape"/>Tygar Bvlgari </label>
+            <label value={neroligrape} onChange={onChangeNeroliGrape}><input type="checkbox" value="neroli grape"/>Tygar Bvlgari </label>
             <label value={lalique} onChange={onChangeLalique}><input type="checkbox" value="lalique"/>Encre Noire Lalique</label>
-            <label value={jimmychoo} onChange={onChangeJimmyChoo}><input type="checkbox" value="lalique"/>Jimmy Choo Man</label>
-            <label value={jimmychoointense} onChange={onChangeJimmyChooIntense}><input type="checkbox" value="lalique"/>Jimmy Choo Man Intense</label>
+            <label value={jimmychoo} onChange={onChangeJimmyChoo}><input type="checkbox" value="jimmy choo"/>Jimmy Choo Man</label>
+            <label value={jimmychoointense} onChange={onChangeJimmyChooIntense}><input type="checkbox" value="jimmy choo intense"/>Jimmy Choo Man Intense</label>
         </div>
     );
 };

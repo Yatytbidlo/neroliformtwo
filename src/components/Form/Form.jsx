@@ -8,6 +8,7 @@ const Form = () => {
     const [phone, setPhone] =
         useState('')
     const [perfume, setPerfume] = useState('')
+    const [volume, setVolume] = useState('')
     // const [neroligrape, setNeroliGrape] = useState('')
     // const [lalique, setLalique] = useState('')
     // const [jimmychoo, setJimmyChoo] = useState('')
@@ -21,9 +22,10 @@ const Form = () => {
             city,
             phone,
             perfume,
+            volume,
         }
         tg.sendData(JSON.stringify(data))
-    }, [name, city, phone, perfume])
+    }, [name, city, phone, perfume, volume])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -39,7 +41,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if (!name || !phone || !city) {
+        if (!name || !phone || !city || !perfume || !volume) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show()
@@ -62,26 +64,9 @@ const Form = () => {
         setPerfume(e.target.value)
     }
 
-    // const onChangeNeroli = (e) => {
-    //     setNeroli(e.target.value)
-    // }
-    //
-    // const onChangeNeroliGrape = (e) => {
-    //     setNeroliGrape(e.target.value)
-    // }
-    //
-    // const onChangeLalique = (e) => {
-    //     setLalique(e.target.value)
-    // }
-    //
-    // const onChangeJimmyChoo = (e) => {
-    //     setJimmyChoo(e.target.value)
-    // }
-    //
-    // const onChangeJimmyChooIntense = (e) => {
-    //     setJimmyChooIntense(e.target.value)
-    // }
-
+    const onChangeVolume =(e) => {
+        setVolume(e.target.value)
+    }
 
     return (
         <div className={'form'}>
@@ -112,11 +97,15 @@ const Form = () => {
                 <option value = {'jimmy choo man'}>Jimmy Choo Man</option>
                 <option value = {'jimmy choo intense'}>Jimmy Choo Man Intense</option>
             </select>
-            {/*<label value={neroli} onChange={onChangeNeroli}><input type="checkbox" value="neroli"/>Aventus Creed</label>*/}
-            {/*<label value={neroligrape} onChange={onChangeNeroliGrape}><input type="checkbox" value="neroli grape"/>Tygar Bvlgari </label>*/}
-            {/*<label value={lalique} onChange={onChangeLalique}><input type="checkbox" value="lalique"/>Encre Noire Lalique</label>*/}
-            {/*<label value={jimmychoo} onChange={onChangeJimmyChoo}><input type="checkbox" value="jimmy choo"/>Jimmy Choo Man</label>*/}
-            {/*<label value={jimmychoointense} onChange={onChangeJimmyChooIntense}><input type="checkbox" value="jimmy choo intense"/>Jimmy Choo Man Intense</label>*/}
+
+            <select value = {volume} onChange={onChangeVolume} className={'select'}>
+                <option>Выберите объём</option>
+                <option value = {'1мл'}>1мл</option>
+                <option value = {'30мл'}>30мл</option>
+                <option value = {'50мл'}>50мл</option>
+                <option value = {'100мл'}>100мл</option>
+            </select>
+
         </div>
     );
 };

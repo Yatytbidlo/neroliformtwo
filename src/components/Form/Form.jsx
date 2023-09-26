@@ -9,10 +9,6 @@ const Form = () => {
         useState('')
     const [perfume, setPerfume] = useState('')
     const [volume, setVolume] = useState('')
-    // const [neroligrape, setNeroliGrape] = useState('')
-    // const [lalique, setLalique] = useState('')
-    // const [jimmychoo, setJimmyChoo] = useState('')
-    // const [jimmychoointense, setJimmyChooIntense] = useState('')
 
     const {tg} = useTelegram()
 
@@ -46,7 +42,7 @@ const Form = () => {
         } else {
             tg.MainButton.show()
         }
-    }, [name, phone, city])
+    }, [name, phone, city, perfume, volume])
 
     const onChangeName = (e) => {
         setName(e.target.value)

@@ -90,6 +90,9 @@ const Form = () => {
                 <option value = {'neroli'}>Neroli</option>
                 <option value = {'neroli grape'}>Neroli Grape</option>
                 <option value = {'lalique'}>Encre Noire Lalique</option>
+                <option value = {'ombre leather tom ford'}>Ombré Leather Tom Ford</option>
+                <option value = {'brutus orto parisi'}>Brutus Orto Parisi</option>
+                <option value = {'bois imperial'}>Bois Impérial Essential Parfums</option>
                 <option value = {'jimmy choo man'}>Jimmy Choo Man</option>
                 <option value = {'jimmy choo intense'}>Jimmy Choo Man Intense</option>
             </select>
@@ -97,6 +100,8 @@ const Form = () => {
             <select value = {volume} onChange={onChangeVolume} className={'select'}>
                 <option>Выберите объём</option>
                 <option value = {'1мл'}>1мл</option>
+                <option value = {'5мл'}>5мл</option>
+                <option value = {'9мл'}>9мл</option>
                 <option value = {'30мл'}>30мл</option>
                 <option value = {'50мл'}>50мл</option>
                 <option value = {'100мл'}>100мл</option>
